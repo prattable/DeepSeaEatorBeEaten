@@ -52,13 +52,13 @@ public class EnemyMovement : MonoBehaviour {
 	bool Offstage()
 	{
 		bool off = false;
-		if(transform.position.x < background.renderer.bounds.min.x)
+		if(transform.position.x < (background.renderer.bounds.min.x + 2))
 			off = true;
-		else if(transform.position.x > background.renderer.bounds.max.x)
+		else if(transform.position.x > (background.renderer.bounds.max.x-2))
 			off = true;
-		else if(transform.position.y < background.renderer.bounds.min.y)
+		else if(transform.position.y < (background.renderer.bounds.min.y + 2))
 			off = true;
-		else if(transform.position.y > background.renderer.bounds.max.y)
+		else if(transform.position.y > (background.renderer.bounds.max.y - 2))
 			off = true;
 		
 		return off;

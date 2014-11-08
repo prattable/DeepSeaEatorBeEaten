@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Eat : MonoBehaviour {
 
+	public GameObject cameraObject;
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
@@ -21,9 +22,15 @@ public class Eat : MonoBehaviour {
 	{
 		Vector3 newScale = transform.parent.localScale;
 		
-		newScale.x = newScale.x * 1.01f;
-		newScale.y = newScale.y * 1.01f;
+		newScale.x = newScale.x * 1.1f;
+		newScale.y = newScale.y * 1.1f;
 		
 		transform.parent.localScale = newScale;
+
+		Camera cam;
+
+		cam = (Camera) cameraObject.GetComponent ("Camera");
+
+		cam.orthographicSize = cam.orthographicSize * 1.1f;
 	}
 }
