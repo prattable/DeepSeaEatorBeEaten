@@ -25,6 +25,8 @@ public class GenerateEnemies : MonoBehaviour {
 
 			GameObject clone = (GameObject) Instantiate(newEnemy, new Vector3(Random.Range(-17f, 17f), Random.Range(-10f,10f), 0), new Quaternion(0,0,0,0));
 
+			clone.SetActive(true);
+
 			/*Vector3 newScale = new Vector3(scaleMultiplier, scaleMultiplier, 0f);
 
 			newEnemy.transform.localScale = newScale;
